@@ -26,8 +26,6 @@ export class AppComponent {
 
   constructor(private dialog: MatDialog) {}
 
-  editTask(list: string, task: Task): void {}
-
   drop(event: CdkDragDrop<Task[]|null>): void {
     if (event.previousContainer === event.container) {
       return;
@@ -53,5 +51,24 @@ export class AppComponent {
     dialogRef
       .afterClosed()
       .subscribe((result: TaskDialogResult) => this.todo.push(result.task));
+  }
+
+  editTask(list: 'done' | 'todo' | 'inProgress', task: Task): void {
+    const dialogRef = this.dialog.open(TaskDialogComponent, {
+      width: '270px',
+      data: {
+        task,
+        enableDelete: true,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: TaskDialogResult) => {
+      const dataList = this[list];
+      const taskIndex = dataList.indexOf(task);
+      if (result.delete) {
+        dataList.splice(taskIndex, 1);
+      } else {
+        dataList[taskIndex] = task;
+      }
+    });
   }
 }
