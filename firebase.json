@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "angular-firebase-webb-app",
-      "public": "dist/angular-firebase-webb-app",
+      "target": "angular-firebase-web-app",
+      "public": "dist/angular-firebase-web-app",
       "ignore": [
         "**/.*"
       ],

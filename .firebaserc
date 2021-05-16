@@ -2,7 +2,7 @@
   "targets": {
     "angular-firebase-web-app": {
       "hosting": {
-        "angular-firebase-webb-app": [
+        "angular-firebase-web-app": [
           "angular-firebase-web-app"
         ]
       }

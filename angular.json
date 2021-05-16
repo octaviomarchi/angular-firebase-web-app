@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-firebase-webb-app": {
+    "angular-firebase-web-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-firebase-webb-app",
+            "outputPath": "dist/angular-firebase-web-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -40,8 +40,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-firebase-webb-app:build:production"
+              "browserTarget": "angular-firebase-web-app:build:production"
             },
             "development": {
-              "browserTarget": "angular-firebase-webb-app:build:development"
+              "browserTarget": "angular-firebase-web-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-firebase-webb-app:build"
+            "browserTarget": "angular-firebase-web-app:build"
           }
         },
         "test": {
@@ -111,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "angular-firebase-webb-app"
+  "defaultProject": "angular-firebase-web-app"
 }
